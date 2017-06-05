@@ -1,0 +1,394 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.5.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Feb 24, 2017 at 10:35 PM
+-- Server version: 5.6.34
+-- PHP Version: 7.1.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `projectdb`
+--
+CREATE DATABASE IF NOT EXISTS `projectdb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `projectdb`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `billing address`
+--
+
+CREATE TABLE `billing address` (
+  `baid` int(11) NOT NULL,
+  `street name` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `zip` varchar(255) NOT NULL,
+  `uid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `billing address`
+--
+
+INSERT INTO `billing address` (`baid`, `street name`, `city`, `state`, `zip`, `uid`) VALUES
+(6, 'd', 'd', '', 'd', 33),
+(7, '7825 mccalum blvd', 'dallas', 'texas', '75252', 34),
+(8, 'a', 'a', '', '75252', 35),
+(9, 'c', 'c', 'c', '12345', 36),
+(10, 'a', 'a', 'a', '12345', 37);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item catalog`
+--
+
+CREATE TABLE `item catalog` (
+  `sku` int(11) NOT NULL,
+  `Category` varchar(255) NOT NULL,
+  `Sub Category` varchar(255) NOT NULL,
+  `item name` varchar(255) NOT NULL,
+  `item description` varchar(255) NOT NULL,
+  `price` float NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `Pic` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `item catalog`
+--
+
+INSERT INTO `item catalog` (`sku`, `Category`, `Sub Category`, `item name`, `item description`, `price`, `quantity`, `Pic`) VALUES
+(16, 'Shoes', 'Men', 'Black formal shoes with brown bottom', 'Burnished round toe.Vulcanized construction for a slimmed-down look.PU out sole with transaction control.', 24.99, 5, 'shm1.jpg'),
+(17, 'Shoes', 'Men', 'white and black sports shoes', 'Lightweight and flexible canvas or leather upper.Cotton drill lining for excellent breathability cushioned.', 19.99, 5, 'shm2.jpg'),
+(18, 'Shoes', 'Men', 'Blue jeans material formal shoes', 'Classic waffle tread design.Durable upper for long lasting wear.Die-cut EVA insert for added support.', 20.5, 5, 'shm4.jpg'),
+(19, 'Shoes', 'Men', 'Black shoes with mustard lines', 'Manufactured using rich leathers slip-on style with double buckle mustard strap and mustard shine lining.', 20.99, 5, 'shm6.jpg'),
+(20, 'Shoes', 'Men', 'black formal shoes', 'Perfectly polished,Gum rubber outsole.Padded collar and footbed for added comfort.Elasticized topline', 19.99, 5, 'shm8.jpg'),
+(21, 'Shoes', 'Men', 'Nike sports shoes', 'Cotton drill lining.Die-cut EVA insert for comfort.Fit, and superior shock absorption.Soft and breathable mesh linings.', 20.5, 5, 'shm3.jpg'),
+(22, 'Shoes', 'Men', 'Brown shoes', 'Crafted using rich leathers slip-on style with double buckle monk strap. Buckle Up dress shoe with All leather linings.', 14.99, 5, 'shm5.jpg'),
+(23, 'Shoes', 'Men', 'Mustard shoes', 'Manufactured using rich leathers slip-on style with double buckle mustard strap and mustard shine lining.', 24.99, 5, 'shm7.jpg'),
+(25, 'Shoes', 'Women', 'Black boots', 'Style up your casual look with black mid calf boots.Lightly-padded footbed.Pointed toe adds sophistication.', 19.99, 5, 'ws4.jpg'),
+(27, 'Shoes', 'Women', 'Black wedges', 'These gold belt black wedges play dual role.Man-made sole.Imported.Available in synthetic and leather.', 20.5, 5, 'ws6.jpg'),
+(28, 'Shoes', 'Women', 'Indian heels', 'Complement your ethnic wear with these gold, stoned high heels.Wrapped stiletto heel.Synthetic outsole.', 14.99, 5, 'ws10.jpg'),
+(29, 'Shoes', 'Women', 'Brown boots', 'In this white and cold season, stay warm while you upgrade your style with cozy ankle lenght leather boots', 19.99, 5, 'ws3.jpg'),
+(30, 'Shoes', 'Women', 'Pink semi boots', 'Leather upper.Easy slip-on wear.Pointed toe.Man-made lining.Lightly cushioned man-made footbed.', 20.5, 5, 'ws5.jpg'),
+(31, 'Shoes', 'Women', 'Plastic crazy heels', 'Want to experiment with fashion? Try out these crazy engineered heels to add touch of constrast to your look.', 14.99, 5, 'ws8.jpg'),
+(32, 'Shoes', 'Women', 'Black heels', 'Add essence to a black themed party look with pencil pointing black styled heels with a flower bow belt.', 24.99, 5, 'ws11.jpg'),
+(33, 'Shoes', 'Kids', 'Heart shaped sandals', 'Thong-style construction. Adjustable buckle closure at ankle strap. Synthetic lining and cushioned foot bed.', 24.99, 5, 'shk1.jpg'),
+(34, 'Shoes', 'Kids', 'White shoes', 'White shoes with pink strap for girls. Fashionable, soft sole.Padded collar and footbed for added comfort.', 19.99, 5, 'shk3.jpg'),
+(35, 'Shoes', 'Kids', 'Greyish blue boots', 'Die-cut EVA insert for comfort.Cotton drill lining for excellent breathability and extra comfort.', 20.5, 5, 'shk5.jpg'),
+(36, 'Shoes', 'Kids', 'Black shoes for girls', 'Cotton drill lining.Synthetic sole.Imported.Die-cut EVA insert for added support.Cushioned footbed molds.', 14.99, 5, 'shk7.jpg'),
+(37, 'Shoes', 'Kids', 'Brownish red shoes', 'Brownish red sports wear for boys. Comfortable and perfect fit for feet. Gives grip and comfort in any kind of activity.', 19.99, 5, 'shk2.jpg'),
+(38, 'Shoes', 'Kids', 'Black flip ons', 'Vulcanized construction for a slimmed-down look.Gum rubber outsole.Small, stacked heel.Elasticized topline.', 20.5, 5, 'shk4.jpg'),
+(39, 'Shoes', 'Kids', 'Grey shoes for boys', 'Lightweight and flexible canvas or leather upper.Soft and breathable mesh linings.Classic waffle thread design.', 14.99, 5, 'shk6.jpg'),
+(40, 'Shoes', 'Kids', 'White Snikkers', 'Classic waffle tread design.Durable upper for long lasting wear.Soft and durable.PU outsole with transaction control.', 24.99, 5, 'shk8.jpg'),
+(41, 'Shirts', 'Women', 'Dark Blue', 'Looking for something formal while adding a touch of fashion? Check out the latest high neck, bow collared dark blue full sleeves formal shirt.', 24.99, 5, 'sw1.jpg'),
+(42, 'Shirts', 'Women', 'Plain white', 'Bored of dressing formal? Get going the semi formal style with white long full sleeves long shirt highlighting the colour of pants and accesories.', 19.99, 5, 'sw2.jpg'),
+(43, 'Shirts', 'Women', 'Brown shirt', 'Brown funky printed silk top makes it curious to play with constrasting colors. Experiment with colors while you mix two dull colors to bring in the bright look.', 20.5, 5, 'sw4.jpg'),
+(44, 'Shirts', 'Women', 'Green cardigan', 'Check out the most searched white deep neck shirt with peacock print cardigan outlined with black ribbon. This attire leaves room for long chains.', 14.99, 5, 'sw6.jpg'),
+(45, 'Shirts', 'Women', 'White & black collar', 'What is a meeting attire? Formals with a standard black and white combination? Check the evergreen black collared full sleeves white shirt.', 19.99, 5, 'sw8.jpg'),
+(46, 'Shirts', 'Women', 'Black shirt', 'Black makes a women all the more professional! Experience this a black formal suit cum shirt. This buttoned shirt can be made semi formal when wore with a tee.', 20.5, 5, 'sw3.jpg'),
+(47, 'Shirts', 'Women', 'Black netted shirt', 'A party? Worried of being out of clothes? Try the latest netted full sleeves black party top. This high collared shirt highlightes the neck excluding jewellery.', 14.99, 5, 'sw5.jpg'),
+(49, 'Shirts', 'Women', 'Cream top', 'When fashion is your priority , you shouldn\'t miss the cream coloured long top with mustard colored belt. Go the cargo style with this deep necked top.', 24.99, 5, 'sw7.jpg'),
+(50, 'Shirts', 'Kids', 'Blue printed shirt for girls', 'Cotton sleeveless blue color long top for girls with yellow red color print. Blue collared casual wear.', 24.99, 5, 'sk1.jpg'),
+(51, 'Shirts', 'Kids', 'Light blue woolen top for girls', 'Light blue sweater material top for girls.Full sleeves t shirt making it warm clothing for winter.', 19.99, 5, 'sk3.jpg'),
+(52, 'Shirts', 'Kids', 'Multicolored cardigan for girls', 'Combination of various earth colors to make a trendy long cardigan for girls.', 20.5, 5, 'sk5.jpg'),
+(53, 'Shirts', 'Kids', 'Yellow netted top for girls', 'Yellow party wear top for girls. High neck with a bow and colored embroidary, netted sleeves.', 14.99, 5, 'sk7.jpg'),
+(54, 'Shirts', 'Kids', 'Blue and pink strips shirt for boys', 'Trendy sea blue checked shirt with pink and black design full sleeves collared shirt for boys.', 19.99, 5, 'sk2.jpg'),
+(55, 'Shirts', 'Kids', 'Dark blue coat for boys', 'Dark blue with red prints coat cum jacket for boys. Full sleeves woolen material with two buttons.', 20.5, 5, 'sk4.jpg'),
+(56, 'Shirts', 'Kids', 'Sea blue long top for girl', 'Sea blue long sleeve less summer top for girls. Cotton material with U cut neck. T shirt material.', 14.99, 5, 'sk6.jpg'),
+(57, 'Shirts', 'Kids', 'Grey multi-design T-shirt for girls', 'Grey warm t shirt with blue and golden prints for girls. Semi warm winter wear with woolen material.', 14.99, 5, '3.jpg'),
+(58, 'Jeans', 'Men', 'Ripped skinny ankle lenght jeans', 'Durable denim construction , 5 pocket, zipper fly, regular fit , straight leg, Cotton , Machine wash, imported.', 24.99, 5, 'jeans1.jpg'),
+(59, 'Jeans', 'Men', 'Light blue semi formal pant', 'Regular fit through the seat and thigh provides room to move, straight leg styling gives you a classic look', 19.99, 5, 'jm2.jpg'),
+(60, 'Jeans', 'Men', 'Black ankle length pant', 'Jeans has a canvas for self expression. True to the original with straight fit and buttom fly shanks. 100% Cotton.', 20.5, 5, 'jm1.jpg'),
+(61, 'Jeans', 'Men', 'Dark grey tappered faded jeans', 'Introduced this new jeans with same quality and craftsmanship as the original. Comfortable 100% cotton.', 14.99, 5, 'jm4.jpg'),
+(62, 'Jeans', 'Men', 'Mega ripped jeans', 'Fashionable men\'s ripped jeans , durable and provides comfort while movement. Cotton , machine wash and non stretch denim imported.', 19.99, 5, 'jeans2.jpg'),
+(63, 'Jeans', 'Men', 'Dark blue faded jeans', 'Men\'s urban pipeline slim fit faded ankle lenght jeans with zipper fly and 5 pocket. Cotton and spandex, machine wash and imported.', 20.5, 5, 'jeans3.jpg'),
+(64, 'Jeans', 'Men', 'Vintage skinny jeans', 'Ultimate skinny jeans for men ,cut for contemporary style and infused with stretch for extra mobility giving it a even leaner and cleaner look.', 14.99, 5, 'jeans4.jpg'),
+(65, 'Jeans', 'Men', 'Blue taper pant', 'A classic taper for every day. Taper fit jeans is roomier in the thigh with a tapered leg for a modern, casual look working for all types non stretch denim imported.', 24.99, 5, 'jm7.jpg'),
+(66, 'Shoes', 'Women', 'Grey heels', 'A perfect add on to suit your formal attire for any professional event. Comfortable soft strap high heels.', 24.99, 5, 'ws2.jpg'),
+(67, 'Jeans', 'Women', 'Light blue faded jeans', 'Durable denim construction , 5 pocket, zipper fly, regular fit , straight leg, Cotton , Machine wash, imported.', 24.99, 5, 'wj01-1.jpg'),
+(68, 'Jeans', 'Women', 'Dark grey skinny', 'Regular fit through the seat and thigh provides room to move, straight leg styling gives you a classic look', 19.99, 5, 'wj02-1.jpg'),
+(69, 'Jeans', 'Women', 'Blue 3/4 th', 'Jeans has a canvas for self expression. True to the original with straight fit and buttom fly shanks. 100% Cotton.', 20.5, 5, 'wj6-1.jpg'),
+(70, 'Jeans', 'Women', 'Ripped jeans', 'Introduced this new jeans with same quality and craftsmanship as the original. Comfortable 100% cotton.', 14.99, 5, 'wj5-1.jpg'),
+(71, 'Jeans', 'Women', 'Grey skinny ankle length jeans ', 'Fashionable women\'s jeans , durable and provides comfort while movement. Cotton , machine wash and imported and fashionable.', 19.99, 5, 'wj2-1.jpg'),
+(72, 'Jeans', 'Women', 'Dark blue high waist jeans', 'women\'s urban pipeline slim fit faded ankle lenght jeans with zipper fly and 5 pocket. Cotton and spandex, machine wash and imported.', 20.5, 5, 'wj4-1.jpg'),
+(73, 'Jeans', 'Women', 'Blue Taper jeans with ankle length', 'Ultimate skinny jeans for women ,cut for contemporary style and infused with stretch for extra mobility giving it a even leaner and cleaner look.', 14.99, 5, 'wj7-1.jpg'),
+(74, 'Jeans', 'Women', 'Bluish grey faded torn jeans', 'A classic taper for every day. Taper fit jeans is roomier in the thigh with a tapered leg for a modern, casual look working for all types non stretch denim imported.\\n\\n', 24.99, 5, 'wj1-1.jpg'),
+(75, 'Jeans', 'Kids', 'Ripped blue jeans for boys', 'Introduced this new jeans with same quality and craftsmanship as the original. Comfortable 100% cotton non stretch denim imported.', 24.99, 5, 'kj1-(1).jpg'),
+(76, 'Jeans', 'Kids', 'Blue faded jeans for boys', 'Jeans has a canvas for self expression. True to the original with straight fit and buttom fly shanks. 100% Cotton. Non stretch denim.', 19.99, 5, 'kj3-1-(1).jpg'),
+(77, 'Jeans', 'Kids', 'Faded blue jeans for girls', 'Fashionable girl\'s jeans , durable and provides comfort while movement. Cotton , machine wash and imported, fashionable for kids.', 20.5, 5, '1.jpg'),
+(78, 'Jeans', 'Kids', 'Faded 3/4th jeans for boys', 'Boy\'s urban pipeline slim fit faded ankle lenght jeans with zipper fly and 5 pocket. Cotton and spandex, machine wash and imported.', 14.99, 5, 'kj8-(1).jpg'),
+(79, 'Jeans', 'Kids', 'Dark blue jeans for boys', 'Durable denim construction , 5 pocket, zipper fly, regular fit , straight leg, Cotton , Machine wash, imported.', 19.99, 5, 'kj2-1-(1).jpg'),
+(80, 'Jeans', 'Kids', 'Casual blue jeans for boys', 'Ultimate skinny jeans ,cut for contemporary style and infused with stretch for extra mobility giving it a even leaner look.', 20.5, 5, 'kj4-(1).jpg'),
+(81, 'Jeans', 'Kids', 'Faded jeans with prints for boys', 'Regular fit through the seat and thigh provides room to move, straight leg styling gives you a classic look', 14.99, 5, 'kj7-(1).jpg'),
+(82, 'Jeans', 'Kids', 'Dark blue skinny jeans for girls', 'A classic taper for every day. Taper fit jeans is roomier in the thigh with a tapered leg for a modern, casual look working for all types.', 24.99, 5, 'sk8.jpg'),
+(83, 'Shirts', 'Men', 'White shirt', 'Men\'s trim fit, Non Iron,semi formal with Herringbone French Cuff Dress Shirt.Machine wash,no pocket,spread collar, 100% cotton.', 24.99, 5, 'sm1-2.jpg'),
+(84, 'Shirts', 'Men', 'Dark grey Stripes shirt', 'Mens Premium Slim Fit Casual Shirts, Tattersall plaid pattern,Compatible with Blazer, Jeans, Suit and Jacket.', 19.99, 5, 'sm2.jpg'),
+(85, 'Shirts', 'Men', 'Light blue checks', 'A wardrobe staple with impeccable hank and jax dress shirt is silhouetted and stitched with utmost precision.', 20.5, 5, 'sm4.jpg'),
+(86, 'Shirts', 'Men', 'Red checks shirt', 'Imported , machine wash red checks casual shirts with solid button front dress featuring point collar with button cuffs.', 14.99, 5, 'sm6.jpg'),
+(87, 'Shirts', 'Men', 'Light blue shirt', 'Semi formal light blue shirt with regular cuffs and Point collar.No pocket. 97% Cotton, 3% Polyurethane with extra large checks.', 19.99, 5, 'sm8.jpg'),
+(88, 'Shirts', 'Men', 'Mustard checks', 'Made with 70% cotton and 30% polyester,, a constructed with versatile cotton - poly blend that is highly wearable no matter the climate.', 20.5, 5, 'sm3.jpg'),
+(89, 'Shirts', 'Men', 'Blue jeans shirt', '100% Cotton,point collar, cuff buttons, smart causal contrast color stitched.Light weight all season denim shirt, pre-washed, regular fit.', 14.99, 5, 'sm5.jpg'),
+(90, 'Shirts', 'Men', 'Grey shirt', 'Button-down closure,long-sleeves,Slim fit style,Great thin cotton fabric.This good quality shirt great for daily look, working, all seasons and occasions', 24.99, 5, 'sm7.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `line items`
+--
+
+CREATE TABLE `line items` (
+  `quantity` int(11) NOT NULL,
+  `lineid` varchar(255) NOT NULL,
+  `stateid` varchar(255) NOT NULL,
+  `orderid` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `orderid` varchar(255) NOT NULL,
+  `order date` date NOT NULL,
+  `sku` int(11) NOT NULL,
+  `uid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sales tax`
+--
+
+CREATE TABLE `sales tax` (
+  `stateid` varchar(255) NOT NULL,
+  `state name` varchar(255) NOT NULL,
+  `tax%` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shipment`
+--
+
+CREATE TABLE `shipment` (
+  `shipid` varchar(255) NOT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  `uid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `shipment`
+--
+
+INSERT INTO `shipment` (`shipid`, `Status`, `uid`) VALUES
+('72146723', 'Picked', 36);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shipping address`
+--
+
+CREATE TABLE `shipping address` (
+  `said` int(11) NOT NULL,
+  `street name` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `zip` varchar(255) NOT NULL,
+  `uid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `shipping address`
+--
+
+INSERT INTO `shipping address` (`said`, `street name`, `city`, `state`, `zip`, `uid`) VALUES
+(5, 'd', 'f', 'd', 'd', 33),
+(6, '7825 mccallum blvd c1507', 'dallas', 'texas', '75252', 34),
+(7, 'a', 'd', 'd', '75252', 35),
+(8, 'c', 'c', 'c', '12345', 36),
+(9, 'a', 'a', 'a', '12345', 37);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscription orders`
+--
+
+CREATE TABLE `subscription orders` (
+  `subid` int(11) NOT NULL,
+  `templateid` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscription template`
+--
+
+CREATE TABLE `subscription template` (
+  `frequency` int(11) NOT NULL,
+  `templateid` varchar(255) NOT NULL,
+  `subid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `uid` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `emailid` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `creditcardnumber` varchar(255) NOT NULL,
+  `cvv` varchar(255) NOT NULL,
+  `expiry date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`uid`, `username`, `password`, `emailid`, `firstname`, `lastname`, `creditcardnumber`, `cvv`, `expiry date`) VALUES
+(33, 'd', 'd', 'd@x.com', 'D', 'd', 'd', '123', '2017-02-10'),
+(34, 'deepak1995', 'deepak1995', 'deepak@m.com', 'deepak', 'Godavarthi', '1234567890123456', '194', '2017-02-23'),
+(35, 'ck17', '12345678', 'as@gmail.com', 'C', 'K', '1234567890123456', '123', '2017-02-24'),
+(36, 'ck', 'abcd1234', 'c@m.com', 'c', 'k', '1234567890123456', '123', '2017-02-25'),
+(37, 'Lolimoli', 'abcd1234', 'molikasinha@gmail.com', 'Molika', 'Sinha', '1234567890123456', '123', '2017-02-07');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `billing address`
+--
+ALTER TABLE `billing address`
+  ADD PRIMARY KEY (`baid`),
+  ADD KEY `billing address_ibfk_1` (`uid`);
+
+--
+-- Indexes for table `item catalog`
+--
+ALTER TABLE `item catalog`
+  ADD PRIMARY KEY (`sku`);
+
+--
+-- Indexes for table `line items`
+--
+ALTER TABLE `line items`
+  ADD PRIMARY KEY (`lineid`),
+  ADD KEY `stateid` (`stateid`),
+  ADD KEY `line items_ibfk_1` (`orderid`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`orderid`,`sku`);
+
+--
+-- Indexes for table `sales tax`
+--
+ALTER TABLE `sales tax`
+  ADD PRIMARY KEY (`stateid`);
+
+--
+-- Indexes for table `shipment`
+--
+ALTER TABLE `shipment`
+  ADD PRIMARY KEY (`shipid`),
+  ADD KEY `uid` (`uid`);
+
+--
+-- Indexes for table `shipping address`
+--
+ALTER TABLE `shipping address`
+  ADD PRIMARY KEY (`said`),
+  ADD KEY `shipping address_ibfk_1` (`uid`);
+
+--
+-- Indexes for table `subscription orders`
+--
+ALTER TABLE `subscription orders`
+  ADD PRIMARY KEY (`subid`);
+
+--
+-- Indexes for table `subscription template`
+--
+ALTER TABLE `subscription template`
+  ADD PRIMARY KEY (`templateid`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`uid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `billing address`
+--
+ALTER TABLE `billing address`
+  MODIFY `baid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `item catalog`
+--
+ALTER TABLE `item catalog`
+  MODIFY `sku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+--
+-- AUTO_INCREMENT for table `shipping address`
+--
+ALTER TABLE `shipping address`
+  MODIFY `said` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `billing address`
+--
+ALTER TABLE `billing address`
+  ADD CONSTRAINT `billing address_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `line items`
+--
+ALTER TABLE `line items`
+  ADD CONSTRAINT `line items_ibfk_1` FOREIGN KEY (`orderid`) REFERENCES `order` (`orderid`);
+
+--
+-- Constraints for table `shipment`
+--
+ALTER TABLE `shipment`
+  ADD CONSTRAINT `shipment_ibfk_2` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`);
+
+--
+-- Constraints for table `shipping address`
+--
+ALTER TABLE `shipping address`
+  ADD CONSTRAINT `shipping address_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`) ON DELETE CASCADE;
